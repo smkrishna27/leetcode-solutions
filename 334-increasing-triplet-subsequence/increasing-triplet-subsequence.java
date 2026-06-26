@@ -1,7 +1,6 @@
 class Solution {
     public boolean increasingTriplet(int[] nums) {
-         if(nums==null || nums.length==0) return false;
-        if(nums.length<2) return false;
+         if(nums==null || nums.length<3) return false;
         int lef=Integer.MAX_VALUE;
         int righ=Integer.MAX_VALUE;
         for(int num:nums){

@@ -1,7 +1,6 @@
 class Solution {
     public int maxArea(int[] height) {
-          if (height == null || height.length == 0) return 0;
-        if (height.length == 1) return Math.min(height[0], height[1]);
+       
 
         int max = 0;
         int left = 0;

@@ -9,11 +9,16 @@ class Solution {
         for (int j : nums2) {
             set2.add(j);
         }
-       Set result1=set1.stream().filter(x -> !set2.contains(x)).collect(Collectors.toSet());
-        Set result2=set2.stream().filter(x -> !set1.contains(x)).collect(Collectors.toSet());
-        res.add(result1.stream().toList());
-        res.add((result2.stream().toList()));
-        return res;
+    Set<Integer> result1 = new HashSet<>(set1);
+    result1.removeAll(set2);
+
+    Set<Integer> result2 = new HashSet<>(set2);
+    result2.removeAll(set1);
+
+    res.add(new ArrayList<>(result1));
+    res.add(new ArrayList<>(result2));
+
+    return res;
         
     }
 }

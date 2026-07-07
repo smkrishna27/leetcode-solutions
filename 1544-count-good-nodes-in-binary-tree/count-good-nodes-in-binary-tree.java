@@ -15,6 +15,9 @@
  */
 class Solution {
     public int goodNodes(TreeNode root) {
+         if(root.left == null && root.right == null){
+            return 1;
+        }
         
        return dfs(root, root.val);
     }

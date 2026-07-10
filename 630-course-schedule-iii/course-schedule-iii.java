@@ -1,5 +1,7 @@
 class Solution {
     public int scheduleCourse(int[][] courses) {
+         int n = courses.length;
+        if(n < 2) return n;
         Arrays.sort(courses, Comparator.comparingInt(a -> a[1]));
         PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
         int time = 0;

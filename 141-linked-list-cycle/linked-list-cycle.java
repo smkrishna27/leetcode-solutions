@@ -11,6 +11,8 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
+
+        if(head==null) return false;
         Set<ListNode> visited=new HashSet<>();
         ListNode current=head;
         while(current !=null){
@@ -25,4 +27,5 @@ public class Solution {
         return false;
         
     }
+
 }

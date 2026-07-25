@@ -15,22 +15,24 @@
  */
 class Solution {
     public int goodNodes(TreeNode root) {
-         if (root == null) {
-            return 0;
-        }
-         if(root.left == null && root.right == null){
-            return 1;
-        }
-       return dfs(root, root.val);
+         if (root == null) return 0;
+        if (root.left == null && root.right == null) return 1;
+        return dfs(root, root.val);
     }
 
-    private int dfs(TreeNode node, int maxVal) {
-        if(node ==null) return 0;
-       
-        int res = (node.val >= maxVal) ? 1 : 0;
-        maxVal = Math.max(maxVal, node.val);
-        res += dfs(node.left, maxVal);
-        res += dfs(node.right, maxVal);
-        return res;
+    private static int dfs(TreeNode root, int val) {
+
+        int count = 0;
+        if (root == null) return 0;
+        if (root.val >= val) {
+            count = 1;
+        }
+        int newMax = Math.max(val, root.val);
+        count += dfs(root.left, newMax);
+        count += dfs(root.right, newMax);
+
+
+        return count;
     }
+
 }

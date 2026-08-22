@@ -16,13 +16,13 @@ class Solution {
             sb.append(word1.charAt(i)).append(word2.charAt(i));
             i++;
         }
-        while (i < word1.length()) {
-            sb.append(word1.charAt(i));
-            i++;
+        if (i < word1.length()) {
+            sb.append(word1.substring(i,word1.length()));
+           
         }
-        while (i < word2.length()) {
-            sb.append(word2.charAt(i));
-            i++;
+        else  if(i < word2.length()) {
+            sb.append(word2.substring(i,word2.length()));
+            
         }
         
         return sb.toString();
